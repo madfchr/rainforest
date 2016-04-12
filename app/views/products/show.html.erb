@@ -1,2 +1,5 @@
-<h1>Products#show</h1>
-<p>Find me in app/views/products/show.html.erb</p>
+<%= link_to "Back to Products Index", product_url %> | <%= link_to "Edit", edit_product_path(@product) %>
+
+<h1>Show Products</h1>
+
+<p><%= @product.name %> | <%= @product.description %> | <%= @product.formatted_price %></p>
