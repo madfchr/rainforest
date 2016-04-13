@@ -1,4 +1,5 @@
 class ReviewsController < ApplicationController
+  before_action :ensure_logged_in, only: [:create, :destroy]
   before_action :load_product
   def show
     @review = Review.find(params[:id])
@@ -12,6 +13,7 @@ class ReviewsController < ApplicationController
       redirect_to products_path, notice: 'Review created successfully'
     else
       render 'products/show'
+    end
   end
 
   def destroy
@@ -20,6 +22,6 @@ class ReviewsController < ApplicationController
   end
 
   def load_product
-    @products = Product.find(params [:product_id])
+    @products = Product.find(params[:product_id])
   end
 end
