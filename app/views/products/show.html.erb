@@ -7,7 +7,7 @@
       <%= review.comment %>
       <br>
       <% if review.user != nil %>
-        <em> by <%= reviews.user.email %></em>
+        <em> by <%= reviews.user.name %></em>
         Added on: <%= review.created_at %>
       <% end %>
     </p>
